@@ -2,12 +2,19 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import eventData from "@/content/event.json";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2026-02-25.clover",
-});
-
 const VALID_ITEMS = ["seat", "vipDinner"] as const;
 type ItemKey = (typeof VALID_ITEMS)[number];
+
+function getStripeClient(): Stripe {
+  const secretKey = process.env.STRIPE_SECRET_KEY;
+  if (!secretKey) {
+    throw new Error("Missing STRIPE_SECRET_KEY environment variable");
+  }
+
+  return new Stripe(secretKey, {
+    apiVersion: "2026-02-25.clover",
+  });
+}
 
 function getPriceId(key: ItemKey): string {
   if (key === "seat") {
@@ -18,6 +25,7 @@ function getPriceId(key: ItemKey): string {
 
 export async function POST(req: NextRequest) {
   try {
+    const stripe = getStripeClient();
     const body = await req.json();
     const { items } = body;
 
