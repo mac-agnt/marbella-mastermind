@@ -1,0 +1,17 @@
+{
+  "event": {
+    "title": "Marbella Mastermind",
+    "location": "Marbella, ES",
+    "startDate": "2026-05-22",
+    "endDate": "2026-05-24",
+    "countdownTargetISO": "2026-05-22T17:00:00+02:00"
+  },
+  "pricing": {
+    "seatEUR": 497,
+    "vipDinnerEUR": 297
+  },
+  "stripe": {
+    "seatPriceId": "price_XXXX",
+    "vipDinnerPriceId": "price_YYYY"
+  }
+}
