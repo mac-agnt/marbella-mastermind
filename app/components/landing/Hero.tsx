@@ -11,7 +11,7 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[64%_78%]"
+        className="object-cover object-[64%_78%] md:object-[64%_58%] lg:object-[64%_52%]"
       />
 
       <div className={styles.shader} aria-hidden="true" />
