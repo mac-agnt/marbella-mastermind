@@ -28,6 +28,54 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.paper-bg {
+  background: #F5F1E8;
+  position: relative;
+  overflow: hidden;
+}
+
+.paper-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 18% 28%, rgba(0,0,0,0.030) 0%, transparent 62%),
+    radial-gradient(circle at 78% 72%, rgba(0,0,0,0.024) 0%, transparent 64%),
+    radial-gradient(circle at 42% 86%, rgba(0,0,0,0.018) 0%, transparent 70%),
+    radial-gradient(circle at 65% 20%, rgba(0,0,0,0.016) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.paper-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.010),
+      rgba(0,0,0,0.010) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.008),
+      rgba(0,0,0,0.008) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.paper-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
 .glass {
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04) 55%, rgba(198, 167, 94, 0.08)),
