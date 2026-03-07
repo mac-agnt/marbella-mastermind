@@ -29,7 +29,7 @@ export function Hero() {
               <span aria-hidden="true" className="mx-2 inline-block text-[1.28em] leading-none align-middle">
                 •
               </span>
-              16 seats
+              100 seats total
             </p>
 
             <h1 className="font-serif text-[clamp(2.12rem,10.4vw,4.45rem)] font-normal leading-[1.01] tracking-[-0.018em] text-[rgba(246,243,238,0.95)] md:leading-[0.99] md:tracking-[-0.02em]">
