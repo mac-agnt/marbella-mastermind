@@ -40,7 +40,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Marbella Mastermind — May 22–24, 2026",
+  title: "Marbella Mastermind — June 5–7, 2026",
   description:
     "An intimate, high-trust gathering for founders and operators. Three days in Marbella. No fluff, no pitching — just the room.",
 };

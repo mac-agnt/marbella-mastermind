@@ -2,6 +2,7 @@ import { Section, Container, Hairline } from "./components/ui";
 import { StickyNav } from "./components/StickyNav";
 import { PlaceholderImage } from "./components/PlaceholderImage";
 import { Countdown } from "./components/Countdown";
+import { SeatAvailabilityTicker } from "./components/SeatAvailabilityTicker";
 import { Hero } from "./components/landing/Hero";
 import { SpeakerTicker } from "./components/SpeakerTicker";
 import { WeekendTimeline } from "./components/WeekendTimeline";
@@ -131,13 +132,11 @@ export default function Home() {
                     href="https://whop.com/joined/marbella-mastermind/products/marbella-mastermind-2026/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex w-full max-w-sm items-center justify-center rounded-xl bg-ink px-6 py-3 text-sm font-medium tracking-[0.012em] text-[rgba(246,243,238,0.95)] transition duration-200 hover:opacity-90 active:translate-y-[0.5px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald md:w-auto"
+                    className="ctaGold ctaGold--final inline-flex w-full max-w-sm items-center justify-center rounded-[14px] px-6 py-3 text-sm font-medium tracking-[0.018em] text-[rgba(28,28,28,0.94)] transition duration-200 hover:brightness-[1.025] active:translate-y-[0.5px] active:shadow-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C6A75E] md:w-auto"
                   >
-                    Buy a ticket now
+                    Reserve Your Seat
                   </a>
-                  <p className="text-sm text-muted">
-                    Less than a 80 seats left.
-                  </p>
+                  <SeatAvailabilityTicker />
                 </div>
               </div>
             </Container>

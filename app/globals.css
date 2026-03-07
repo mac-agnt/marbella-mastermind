@@ -187,3 +187,49 @@ body {
     inset 0 -1px 0 rgba(143, 106, 30, 0.58),
     0 4px 12px rgba(0, 0, 0, 0.14);
 }
+
+.ctaGold--final {
+  border: 1px solid rgba(119, 85, 21, 0.72);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 0 rgba(110, 82, 22, 0.7),
+    0 6px 16px rgba(0, 0, 0, 0.14);
+}
+
+.availabilityTicker {
+  width: 100%;
+  max-width: 32rem;
+  overflow: hidden;
+  border-radius: 999px;
+  border: 1px solid rgba(198, 167, 94, 0.26);
+  background: rgba(253, 252, 250, 0.7);
+}
+
+.availabilityTickerTrack {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: max-content;
+  padding: 0.52rem 1rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(138, 133, 120, 0.96);
+  animation: availability-marquee 22s linear infinite;
+}
+
+@keyframes availability-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 0.75rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .availabilityTickerTrack {
+    animation: none;
+  }
+}

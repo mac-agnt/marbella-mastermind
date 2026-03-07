@@ -35,7 +35,10 @@ const days: DayData[] = [
     description:
       "Morning roundtable. Afternoon hot seats\u2014bring your hardest problem. Optional VIP dinner on the coast.",
     chips: ["Roundtable", "Hot seats", "VIP dinner"],
-    primaryImage: { src: "/images/LipsettGroup.png", alt: "Group working session" },
+    primaryImage: {
+      src: "/images/WhatsApp%20Image%202026-03-07%20at%2014.42.14%20%281%29.jpeg",
+      alt: "Deep work session inside the Marbella villa",
+    },
     secondaryImage: {
       src: "/images/ferraripic.png",
       alt: "Ferrari experience",
@@ -44,11 +47,14 @@ const days: DayData[] = [
   },
   {
     label: "SUNDAY",
-    title: "Commit & Close",
+    title: "Train & Close Strong",
     description:
-      "Final working session. Leave with a concrete commitment and an accountability partner. Brunch and farewells.",
-    chips: ["Commitments", "Accountability", "Brunch"],
-    primaryImage: { src: "/baisinboat.png", alt: "Boat on the coast" },
+      "Start with a focused gym session as a group to reset energy and sharpen intent. Close with final reflections, then brunch and farewells before everyone heads out.",
+    chips: ["Gym session", "Final reflections", "Brunch"],
+    primaryImage: {
+      src: "/images/gym.png",
+      alt: "Group gym training session in Marbella",
+    },
     secondaryImage: { src: "/Villafull.png", alt: "Villa at sunset" },
     side: "left",
   },

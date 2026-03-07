@@ -2,9 +2,9 @@
   "event": {
     "title": "Marbella Mastermind",
     "location": "Marbella, ES",
-    "startDate": "2026-05-22",
-    "endDate": "2026-05-24",
-    "countdownTargetISO": "2026-05-22T17:00:00+02:00"
+    "startDate": "2026-06-05",
+    "endDate": "2026-06-07",
+    "countdownTargetISO": "2026-06-05T17:00:00+02:00"
   },
   "pricing": {
     "seatEUR": 497,

@@ -4,20 +4,22 @@ import styles from "./SpeakerTicker.module.css";
 
 type Speaker = {
   name: string;
-  image: string;
+  image: string | null;
+  placeholder?: boolean;
 };
 
 const speakers: Speaker[] = [
   { name: "Adam", image: "/AdamSquare.png" },
   { name: "Rob", image: "/RobSquare.png" },
-  { name: "Arsalan", image: "/ArsalanSquare.png" },
   { name: "Merijn", image: "/MerijnSquare.png" },
   { name: "Darren", image: "/DarrenSquare.png" },
-  { name: "Dan", image: "/DanSquare.png" },
-  { name: "Blackwell", image: "/BlackwellImage.png" },
+  { name: "James", image: "/BlackwellImage.png" },
   { name: "Liam", image: "/LiamSquare.png" },
   { name: "Nils", image: "/NilsSquare.png" },
   { name: "Chris", image: "/ChrisSquare.png" },
+  { name: "Tyler", image: "/images/Tyler.png" },
+  { name: "To Be Announced", image: null, placeholder: true },
+  { name: "To Be Announced", image: null, placeholder: true },
 ];
 
 export function SpeakerTicker() {
@@ -40,13 +42,22 @@ export function SpeakerTicker() {
           <div className={styles.tickerTrack}>
             {tickerCards.map((speaker, index) => (
               <article className={styles.card} key={`${speaker.name}-${index}`}>
-                <Image
-                  src={speaker.image}
-                  alt={`${speaker.name} speaker portrait`}
-                  fill
-                  sizes="(max-width: 768px) 65vw, 300px"
-                  className={styles.image}
-                />
+                {speaker.placeholder ? (
+                  <div
+                    className={`${styles.placeholderImage} ${index % 2 === 0 ? styles.placeholderVariantA : styles.placeholderVariantB}`}
+                    aria-label="To be announced speaker placeholder"
+                  >
+                    <span className={styles.placeholderMark}>TBA</span>
+                  </div>
+                ) : (
+                  <Image
+                    src={speaker.image as string}
+                    alt={`${speaker.name} speaker portrait`}
+                    fill
+                    sizes="(max-width: 768px) 65vw, 300px"
+                    className={styles.image}
+                  />
+                )}
                 <div className={styles.overlay}>
                   <span className={styles.roleTag}>Speaker</span>
                   <h3 className={styles.name}>{speaker.name}</h3>

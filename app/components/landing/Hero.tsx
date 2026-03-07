@@ -6,8 +6,8 @@ export function Hero() {
   return (
     <section className={styles.heroSection}>
       <Image
-        src="/images/LipsettGroup.png"
-        alt="Marbella Mastermind attendees gathering outdoors"
+        src="/images/WhatsApp%20Image%202026-03-07%20at%2014.42.14.jpeg"
+        alt="Marbella Mastermind session in a private villa"
         fill
         priority
         sizes="100vw"
@@ -21,7 +21,7 @@ export function Hero() {
         <div className="max-w-[640px] w-full min-h-[calc(86svh-7.25rem)] md:min-h-0 flex flex-col justify-between text-left text-[rgba(246,243,238,0.95)]">
           <div>
             <p className="mb-6 mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-[rgba(214,204,176,0.75)] md:mb-7 md:mt-0 md:text-[13px] md:tracking-[0.16em]">
-              May 22–24, 2026{" "}
+              June 5–7, 2026{" "}
               <span aria-hidden="true" className="mx-2 inline-block text-[1.28em] leading-none align-middle">
                 •
               </span>
