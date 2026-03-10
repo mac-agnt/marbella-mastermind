@@ -42,7 +42,18 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Marbella Mastermind — June 5–7, 2026",
   description:
-    "An intimate, high-trust gathering for founders and operators. Three days in Marbella. No fluff, no pitching — just the room.",
+    "A three-day private mastermind in Marbella for founders and operators: focused sessions, peer problem-solving, group training, and curated networking.",
+  openGraph: {
+    title: "Marbella Mastermind — June 5–7, 2026",
+    description:
+      "A three-day private mastermind in Marbella for founders and operators: focused sessions, peer problem-solving, group training, and curated networking.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marbella Mastermind — June 5–7, 2026",
+    description:
+      "A three-day private mastermind in Marbella for founders and operators: focused sessions, peer problem-solving, group training, and curated networking.",
+  },
 };
 
 export default function RootLayout({
