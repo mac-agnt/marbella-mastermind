@@ -4,8 +4,7 @@ import styles from "./SpeakerTicker.module.css";
 
 type Speaker = {
   name: string;
-  image: string | null;
-  placeholder?: boolean;
+  image: string;
 };
 
 const speakers: Speaker[] = [
@@ -18,13 +17,11 @@ const speakers: Speaker[] = [
   { name: "Nils", image: "/NilsSquare.png" },
   { name: "Chris", image: "/ChrisSquare.png" },
   { name: "Tyler", image: "/images/Tyler.png" },
-  { name: "To Be Announced", image: null, placeholder: true },
-  { name: "To Be Announced", image: null, placeholder: true },
+  { name: "Warren", image: "/Screenshot%202026-04-02%20at%2020.50.58.png" },
+  { name: "Josh", image: "/Screenshot%202026-04-02%20at%2020.51.47.png" },
 ];
 
 export function SpeakerTicker() {
-  const tickerCards = [...speakers, ...speakers];
-
   return (
     <Section id="overview">
       <Container>
@@ -38,33 +35,22 @@ export function SpeakerTicker() {
           Operators, founders, and practitioners — no spectators.
         </p>
 
-        <div className={styles.tickerViewport}>
-          <div className={styles.tickerTrack}>
-            {tickerCards.map((speaker, index) => (
-              <article className={styles.card} key={`${speaker.name}-${index}`}>
-                {speaker.placeholder ? (
-                  <div
-                    className={`${styles.placeholderImage} ${index % 2 === 0 ? styles.placeholderVariantA : styles.placeholderVariantB}`}
-                    aria-label="To be announced speaker placeholder"
-                  >
-                    <span className={styles.placeholderMark}>TBA</span>
-                  </div>
-                ) : (
-                  <Image
-                    src={speaker.image as string}
-                    alt={`${speaker.name} speaker portrait`}
-                    fill
-                    sizes="(max-width: 768px) 65vw, 300px"
-                    className={styles.image}
-                  />
-                )}
-                <div className={styles.overlay}>
-                  <span className={styles.roleTag}>Speaker</span>
-                  <h3 className={styles.name}>{speaker.name}</h3>
-                </div>
-              </article>
-            ))}
-          </div>
+        <div className={styles.speakerGrid}>
+          {speakers.map((speaker) => (
+            <article className={styles.card} key={speaker.name}>
+              <Image
+                src={speaker.image}
+                alt={`${speaker.name} speaker portrait`}
+                fill
+                sizes="(max-width: 699px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                className={styles.image}
+              />
+              <div className={styles.overlay}>
+                <span className={styles.roleTag}>Speaker</span>
+                <h3 className={styles.name}>{speaker.name}</h3>
+              </div>
+            </article>
+          ))}
         </div>
       </Container>
     </Section>

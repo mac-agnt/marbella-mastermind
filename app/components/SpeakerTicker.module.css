@@ -1,41 +1,17 @@
-.tickerViewport {
-  position: relative;
-  overflow: hidden;
-  --edge-fade: 60px;
-  mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    black var(--edge-fade),
-    black calc(100% - var(--edge-fade)),
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    black var(--edge-fade),
-    black calc(100% - var(--edge-fade)),
-    transparent 100%
-  );
-}
-
-.tickerTrack {
-  --ticker-gap: 20px;
-  display: flex;
-  gap: var(--ticker-gap);
-  width: max-content;
-  animation: speaker-marquee 54s linear infinite;
-  will-change: transform;
+.speakerGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .card {
   position: relative;
-  width: clamp(220px, 26vw, 310px);
-  min-height: clamp(350px, 38vw, 408px);
+  width: 100%;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 24px;
   border: none;
   box-shadow: none;
-  scroll-snap-align: start;
   background: #121212;
 }
 
@@ -46,43 +22,6 @@
   object-position: center;
   transform: scale(1);
   transition: transform 480ms ease;
-}
-
-.placeholderImage {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    radial-gradient(120% 110% at 20% 10%, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 52%),
-    linear-gradient(160deg, rgba(43, 43, 43, 0.92), rgba(24, 24, 24, 0.98));
-}
-
-.placeholderVariantA {
-  box-shadow: inset 0 0 0 1px rgba(246, 243, 238, 0.12);
-}
-
-.placeholderVariantB {
-  box-shadow:
-    inset 0 0 0 1px rgba(246, 243, 238, 0.1),
-    inset 0 -40px 80px rgba(198, 167, 94, 0.08);
-}
-
-.placeholderMark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 64px;
-  border-radius: 999px;
-  border: 1px solid rgba(246, 243, 238, 0.22);
-  background: rgba(246, 243, 238, 0.08);
-  padding: 6px 14px;
-  font-family: var(--font-mono), monospace;
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(246, 243, 238, 0.78);
 }
 
 .overlay {
@@ -162,7 +101,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .card:hover .image {
-    transform: scale(1.03);
+    transform: scale(1.01);
   }
 
   .card:hover .overlay::after {
@@ -170,49 +109,36 @@
   }
 }
 
-@keyframes speaker-marquee {
-  from {
-    transform: translateX(0);
+@media (min-width: 700px) {
+  .speakerGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
   }
-  to {
-    transform: translateX(calc(-50% - 10px));
+}
+
+@media (min-width: 1200px) {
+  .speakerGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .card {
+    aspect-ratio: 5 / 6;
   }
 }
 
 @media (max-width: 767px) {
-  .tickerTrack {
-    --ticker-gap: 14px;
-    animation-duration: 64s;
-  }
-
-  .tickerViewport {
-    --edge-fade: 36px;
-  }
-
   .card {
-    width: clamp(150px, 41vw, 190px);
-    min-height: clamp(250px, 64vw, 305px);
+    border-radius: 22px;
   }
 
   .overlay {
     min-height: 34%;
-    padding: 0 14px 14px;
+    padding: 0 12px 12px;
   }
 
   .name {
     max-width: 92%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .tickerViewport {
-    overflow-x: auto;
-    mask-image: none;
-    -webkit-mask-image: none;
-    scroll-snap-type: x mandatory;
-  }
-
-  .tickerTrack {
-    animation: none;
+    font-size: clamp(1.15rem, 5vw, 1.45rem);
   }
 }
