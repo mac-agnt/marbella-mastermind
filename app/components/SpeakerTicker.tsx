@@ -14,11 +14,12 @@ const speakers: Speaker[] = [
   { name: "Darren", image: "/DarrenSquare.png" },
   { name: "James", image: "/BlackwellImage.png" },
   { name: "Liam", image: "/LiamSquare.png" },
-  { name: "Nils", image: "/NilsSquare.png" },
   { name: "Chris", image: "/ChrisSquare.png" },
   { name: "Tyler", image: "/images/Tyler.png" },
   { name: "Warren", image: "/Screenshot%202026-04-02%20at%2020.50.58.png" },
   { name: "Josh", image: "/Screenshot%202026-04-02%20at%2020.51.47.png" },
+  { name: "Brook", image: "/brook.png" },
+  { name: "Paul", image: "/paul.png" },
 ];
 
 export function SpeakerTicker() {
