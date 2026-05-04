@@ -5,6 +5,7 @@ import styles from "./SpeakerTicker.module.css";
 type Speaker = {
   name: string;
   image: string;
+  objectPosition?: string;
 };
 
 const speakers: Speaker[] = [
@@ -19,7 +20,7 @@ const speakers: Speaker[] = [
   { name: "Warren", image: "/Screenshot%202026-04-02%20at%2020.50.58.png" },
   { name: "Josh", image: "/Screenshot%202026-04-02%20at%2020.51.47.png" },
   { name: "Brook", image: "/brook.png" },
-  { name: "Paul", image: "/paul.png" },
+  { name: "Paul", image: "/paul.png", objectPosition: "center top" },
 ];
 
 export function SpeakerTicker() {
@@ -45,6 +46,7 @@ export function SpeakerTicker() {
                 fill
                 sizes="(max-width: 699px) 100vw, (max-width: 1199px) 50vw, 33vw"
                 className={styles.image}
+                style={speaker.objectPosition ? { objectPosition: speaker.objectPosition } : undefined}
               />
               <div className={styles.overlay}>
                 <span className={styles.roleTag}>Speaker</span>
